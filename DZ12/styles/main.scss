@@ -1,0 +1,761 @@
+@import 'base/base';
+@import 'base/variables';
+@import 'base/mixins';
+@import 'base/fonts';
+
+header{
+    width: 100%;
+    height: 700px;
+    padding-top: 40px;
+    background: {
+        image: url(../images/Background.png);
+        repeat: no-repeat;
+        size: cover;
+        position: center;
+    }
+    
+}
+
+.header{
+    width: 70%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    .logo{
+        @include fontz ('Montserrat', 20px, 700, #FFFFFF);
+    }
+    .menu__item{
+        @include fontz ('Montserrat', 14px, 400, #FFFFFF);
+        margin-left: 25px;
+        padding: 8px;
+        text-decoration: none;
+        &_border{
+            border: 1px solid #FFFFFF;
+            border-radius: 15px;
+        }
+    }
+}
+
+.share{
+    width: 90%;
+    margin: 150px auto;
+    text-align: center;
+    p{
+        @include fontz ('Montserrat', 52px, 700, #FFFFFF);
+        margin-bottom: 28px;
+    }
+    span{
+        @include fontz ('Roboto', 24px, 300, #FFFFFF);
+    }
+    a{
+        @include fontz ('Montserrat', 14px, 700, #FFFFFF);
+        margin: 45px auto;
+        width: 25%;
+        display: block;
+        text-decoration: none;
+        background-color: $main-color;
+        border-radius: 15px;
+        padding: 8px;
+    }
+}
+
+.container{
+    width: 70%;
+    margin: 95px auto;
+}
+
+%button-step{
+    @include fontz ('Montserrat', 10px, 400, #FFFFFF);
+    width: 37%;
+    display: block;
+    text-decoration: none;
+    background-color: $main-color;
+    border-radius: 15px;
+    padding: 5px 0px 5px 0px;
+    letter-spacing: 2px;
+    text-align: center;
+}
+
+.how{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 60px 400px;
+    column-gap: 20px;
+    h1{
+        grid-column: 1/4;
+        grid-row: 1/2;
+        @include fontz ('Montserrat', 26px, 700, black);
+        justify-self: center;
+    }
+    &__step1{
+        grid-column: 1/2;
+        grid-row: 2/3;
+        padding: 210px 20px 0px 20px;
+        background: {
+            image: url(../images/Step1.png);
+            repeat: no-repeat;
+            size: cover;
+            position: center;
+        }
+        a{
+            @extend %button-step;
+        }
+        h2{
+            @include fontz ('Montserrat', 24px, 700, #FFFFFF);
+            margin: 20px 0px;
+        }
+        p{
+            @include fontz ('Roboto', 14px, 300, #E3E3E3);
+        }
+
+    }
+    &__step2{
+        grid-column: 2/3;
+        grid-row: 2/3;
+        padding: 210px 20px 0px 20px;
+        background: {
+            image: url(../images/Step2.png);
+            repeat: no-repeat;
+            size: cover;
+            position: center;
+        }
+        a{
+            @extend %button-step;
+        }
+        h2{
+            @include fontz ('Montserrat', 24px, 700, #FFFFFF);
+            margin: 20px 0px;
+        }
+        p{
+            @include fontz ('Roboto', 14px, 300, #E3E3E3);
+        }
+    }
+    &__step3{
+        grid-column: 3/4;
+        grid-row: 2/3;
+        padding: 210px 20px 0px 20px;
+        background: {
+            image: url(../images/Step3.png);
+            repeat: no-repeat;
+            size: cover;
+            position: center;
+        }
+        a{
+            @extend %button-step;
+        }
+        h2{
+            @include fontz ('Montserrat', 24px, 700, #FFFFFF);
+            margin: 20px 0px;
+        }
+        p{
+            @include fontz ('Roboto', 14px, 300, #E3E3E3);
+        }
+    }
+}
+
+.meet{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 60px 1fr 60px;
+    column-gap: 15px;
+    margin-top: 90px;
+    h1{
+        grid-column: 1/2;
+        grid-row: 1/2;
+        @include fontz ('Montserrat', 26px, 700, black);
+        justify-self: center;
+    }
+    .meet__oll{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr;
+        column-gap: 15px;
+    }
+    .meet__people{
+        text-align: center;
+        .meet__people_1{
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background-image: url(../images/Bitmap1.png);
+            margin: 0 auto;
+            position: relative;
+            &::after{
+                content: '';
+                background-image: url(../images/music-solid.svg);
+                background-size: 15px 15px;
+                background-repeat: no-repeat;
+                background-position: center;
+                display: block;
+                width: 30px;
+                height: 30px;
+                border-radius: 50%;
+                background-color: $main-color;
+                position: absolute;
+                bottom: 0px;
+                right: 0px;
+                border: 3px solid white;
+    
+            }
+        }
+        
+        h2{
+            @include fontz ('Montserrat', 14px, 700, black);
+            margin: 17px 0px 12px 0px;
+        }
+        p{
+            @include fontz ('Roboto', 14px, 300, #666666);
+        }
+        .meet__people_2{
+            background-image: url(../images/Bitmap3.png);
+            &::after{
+                content: '';
+                background-image: url(../images/paint-brush-solid.svg);
+                background-color: darkturquoise;
+            }
+        }
+        .meet__people_3{
+            background-image: url(../images/Bitmap2.png);
+            &::after{
+                content: '';
+                background-image: url(../images/camera-solid.svg);
+                background-color: yellow;
+            }
+        }
+        .meet__people_4{
+            background-image: url(../images/Bitmap4.png);
+            &::after{
+                content: '';
+                background-image: url(../images/plane-solid.svg);
+                background-color: blue;
+            }
+        }
+    }
+    a{
+        grid-column: 1/2;
+        grid-row: 3/4;
+        justify-self: center;
+        align-self: center;
+        @include fontz ('Montserrat', 14px, 700, #FFFFFF);
+        display: block;
+        text-decoration: none;
+        border-radius: 15px;
+        border: 2px solid $main-color;
+        padding: 10px;
+        color: $main-color;
+    }
+}
+
+.discover{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 40px 1fr 1fr 1fr;
+    margin-top: 95px;
+    gap: 20px 20px;
+    h1{
+        grid-column: 1/4;
+        grid-row: 1/2;
+        @include fontz ('Montserrat', 26px, 700, black);
+        justify-self: center;
+    }
+    &__spotrs{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        grid-column: 1/2;
+        grid-row: 2/3;
+        height: 310px;
+        background: {
+            image: url(../images/Sport.png);
+            repeat: no-repeat;
+            size: cover;
+            position: center;
+        }
+        h2{
+            @include fontz ('Montserrat', 22px, 700, #FFFFFF);
+        }
+    }
+    &__health{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        grid-column: 2/3;
+        grid-row: 2/3;
+        height: 310px;
+        background: {
+            image: url(../images/Healath.png);
+            repeat: no-repeat;
+            size: cover;
+            position: center;
+        }
+        h2{
+            @include fontz ('Montserrat', 22px, 700, #FFFFFF);
+        }
+    }
+    &__extreme{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        grid-column: 3/4;
+        grid-row: 2/3;
+        background: {
+            image: url(../images/Extreme.png);
+            repeat: no-repeat;
+            size: cover;
+            position: center;
+        }
+        h2{
+            @include fontz ('Montserrat', 22px, 700, #FFFFFF);
+        }
+    }
+    &__games{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        grid-column: 1/2;
+        grid-row: 3/4;
+        background: {
+            image: url(../images/Games.png);
+            repeat: no-repeat;
+            size: cover;
+            position: center;
+        }
+        h2{
+            @include fontz ('Montserrat', 22px, 700, #FFFFFF);
+        }
+    }
+    &__culture{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        grid-column: 2/4;
+        grid-row: 3/4;
+        background: {
+            image: url(../images/Culture.png);
+            repeat: no-repeat;
+            size: cover;
+            position: center;
+        }
+        h2{
+            @include fontz ('Montserrat', 22px, 700, #FFFFFF);
+        }
+    }
+    &__relaxation{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        grid-column: 1/3;
+        grid-row: 4/5;
+        background: {
+            image: url(../images/Relaxation.png);
+            repeat: no-repeat;
+            size: cover;
+            position: center;
+        }
+        h2{
+            @include fontz ('Montserrat', 22px, 700, #FFFFFF);
+        }
+    }
+    &__trevelling{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        grid-column: 3/4;
+        grid-row: 4/5;
+        background: {
+            image: url(../images/Trevelling.png);
+            repeat: no-repeat;
+            size: cover;
+            position: center;
+        }
+        h2{
+            @include fontz ('Montserrat', 22px, 700, #FFFFFF);
+        }
+    }
+}
+
+.crate{
+    width: 60%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    row-gap: 25px;
+    margin: 0 auto;
+    padding-top: 90px;
+    h1{
+        grid-column: 1/3;
+        grid-row: 1/2;
+        @include fontz ('Montserrat', 26px, 700, black);
+        justify-self: center;
+        text-align: center;
+    }
+    h2{
+        grid-column: 1/3;
+        grid-row: 2/3;
+        @include fontz ('Roboto', 18px, 300, #666666);
+        justify-self: center;
+    }
+    input{
+        grid-column: 1/2;
+        grid-row: 3/4;
+        @include fontz ('Roboto', 14px, 300, #666666);
+    }
+    a{
+        grid-column: 2/3;
+        grid-row: 3/4;
+        @include fontz ('Montserrat', 14px, 700, #FFFFFF);
+        text-decoration: none;
+        background-color: $main-color;
+        border-radius: 15px;
+        text-align: center;
+        line-height: 23px;
+        margin-left: 10px;
+    }
+
+}
+footer{
+    width: 100%;
+    border-top: 3px solid $main-color;
+    padding-top: 35px;
+}
+.footer{
+    width: 70%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    row-gap: 10px;
+    margin: 0 auto;
+    &__dreamshare{
+        grid-column: 1/2;
+        grid-row: 1/8;
+        @include fontz ('Montserrat', 16px, 400, $main-color);
+    }
+    &__company{
+        grid-column: 2/3;
+        grid-row: 1/2;
+        @include fontz ('Montserrat', 14px, 700, black);
+    }
+    &__about{
+        grid-column: 2/3;
+        grid-row: 2/3;
+        @include fontz ('Roboto', 14px, 300, #666666);
+    }
+    &__contact{
+        grid-column: 2/3;
+        grid-row: 3/4;
+        @include fontz ('Roboto', 14px, 300, #666666);
+    }
+    &__press{
+        grid-column: 2/3;
+        grid-row: 4/5;
+        @include fontz ('Roboto', 14px, 300, #666666);
+    }
+    &__blog{
+        grid-column: 2/3;
+        grid-row: 5/6;
+        @include fontz ('Roboto', 14px, 300, #666666);
+    }
+    &__terms{
+        grid-column: 2/3;
+        grid-row: 6/7;
+        @include fontz ('Roboto', 14px, 300, #666666);
+    }
+    &__help{
+        grid-column: 2/3;
+        grid-row: 7/8;
+        @include fontz ('Roboto', 14px, 300, #666666);
+    }
+    &__partners{
+        grid-column: 3/4;
+        grid-row: 1/2;
+        @include fontz ('Montserrat', 14px, 700, black);
+    }
+    &__designed{
+        grid-column: 4/5;
+        grid-row: 1/2;
+        place-self: start end;
+        @include fontz ('Montserrat', 10px, 700, #CCCCCC);
+    }
+    &__areto{
+        grid-column: 4/5;
+        grid-row: 2/3;
+        place-self: start end;
+    }
+}
+
+@media screen and (max-width: 992px){
+    .container{
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 769px){
+    .header{
+        width: 90%;
+    }
+    .container{
+        width: 95%;
+    }
+    .how{
+        h1{
+            font-size: 22px;
+        }
+        &__step1{
+            padding: 210px 5px 0px 5px;
+            h2{
+                @include fontz ('Montserrat', 20px, 700, #FFFFFF);
+            }
+        }
+        &__step2{
+            padding: 210px 5px 0px 5px;
+            h2{
+                @include fontz ('Montserrat', 20px, 700, #FFFFFF);
+            }
+        }
+        &__step3{
+            padding: 210px 5px 0px 5px;
+            h2{
+                @include fontz ('Montserrat', 20px, 700, #FFFFFF);
+            }
+        }
+    }
+    .meet{
+        .meet__oll{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            gap: 35px 20px;
+        }
+    }
+    .discover{
+        h1{
+            font-size: 22px;
+        }
+    }
+    .crate{
+        width: 70%;
+        h1{
+            @include fontz ('Montserrat', 22px, 700, black);
+        }
+    }
+    .footer{
+        width: 95%;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    header{
+        height: 540px;
+        background-image: url(../images/Background1.png);
+        background-size: cover;
+    }
+    .header{
+        flex-wrap: wrap;
+        flex-direction: column-reverse;
+        align-content: center;
+        .logo{
+            margin-top: 97px;
+            margin-left: 25px;
+        }
+    }
+    .share{
+        margin-top: 26px;
+        p{
+          @include fontz ('Montserrat', 30px, 700, #FFFFFF);
+          margin-bottom: 5px;
+        }
+        span{
+            @include fontz ('Roboto', 20px, 300, #FFFFFF);
+        }
+        a{
+            width: 90%;
+        }
+    }
+    .container{
+        margin: 35px auto;
+    }
+    .how{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 60px 240px 240px 240px;
+        row-gap: 10px;
+        h1{
+            grid-column: 1/2;
+            grid-row: 1/2;
+        }
+        &__step1{
+            grid-column: 1/2;
+            grid-row: 2/3;
+            padding: 65px 20px 0px 20px;
+            h2{
+                @include fontz ('Montserrat', 24px, 700, #FFFFFF);
+            }
+        }
+        &__step2{
+            grid-column: 1/2;
+            grid-row: 3/4;
+            padding: 65px 20px 0px 20px;
+            h2{
+                @include fontz ('Montserrat', 24px, 700, #FFFFFF);
+            }
+        }
+        &__step3{
+            grid-column: 1/2;
+            grid-row: 4/5;
+            padding: 65px 20px 0px 20px;
+            h2{
+                @include fontz ('Montserrat', 24px, 700, #FFFFFF);
+            }
+        }
+    }
+    .meet{
+        .meet__oll{
+            width: 70%;
+            place-self: center center;
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr 1fr 1fr 1fr;
+            row-gap: 15px;
+        }
+    }
+    .discover{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 60px 120px 120px 120px 120px 120px 120px 120px;
+        row-gap: 10px;
+        margin-top: 35px;
+        h1{
+            grid-column: 1/2;
+            grid-row: 1/2;
+            text-align: center;
+        }
+        &__spotrs{
+            height: 120px;
+            grid-column: 1/2;
+            grid-row: 2/3;
+        }
+        &__health{
+            height: 120px;
+            grid-column: 1/2;
+            grid-row: 3/4;
+        }
+        &__extreme{
+            grid-column: 1/2;
+            grid-row: 4/5;
+        }
+        &__games{
+            grid-column: 1/2;
+            grid-row: 5/6;
+        }
+        &__culture{
+            grid-column: 1/2;
+            grid-row: 6/7;
+        }
+        &__relaxation{
+            grid-column: 1/2;
+            grid-row: 7/8;
+        }
+        &__trevelling{
+            grid-column: 1/2;
+            grid-row: 8/9;
+        }
+    }
+    .crate{
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+        row-gap: 10px;
+        padding-top: 50px;
+        margin-bottom: 40px;
+        h1{
+            grid-column: 1/2;
+            grid-row: 1/2;
+        }
+        h2{
+            grid-column: 1/2;
+            grid-row: 2/3;
+        }
+        input{
+            grid-column: 1/2;
+            grid-row: 3/4;
+        }
+        a{
+            grid-column: 1/2;
+            grid-row: 4/5;
+            margin-left: 0px;
+        }
+    }
+    footer{
+        padding-top: 19px;
+    }
+    .footer{
+        width: 50%;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+        row-gap: 5px;
+        &__dreamshare{
+            grid-column: 1/5;
+            grid-row: 1/2;
+            place-self: center;
+        }
+        &__company{
+            grid-column: 1/5;
+            grid-row: 2/3;
+            place-self: center;
+        }
+        &__about{
+            grid-column: 1/2;
+            grid-row: 3/4;
+            place-self: center;
+        }
+        &__contact{
+            grid-column: 2/3;
+            grid-row: 3/4;
+            place-self: center;
+        }
+        &__press{
+            grid-column: 3/4;
+            grid-row: 3/4;
+            place-self: center;
+        }
+        &__blog{
+            grid-column: 4/5;
+            grid-row: 3/4;
+            place-self: center;
+        }
+        &__terms{
+            grid-column: 1/4;
+            grid-row: 4/5;
+            place-self: center;
+        }
+        &__help{
+            grid-column: 4/5;
+            grid-row: 4/5;
+            place-self: center start;
+        }
+        &__partners{
+            grid-column: 1/5;
+            grid-row: 5/6;
+            place-self: center;
+        }
+        &__designed{
+            grid-column: 1/5;
+            grid-row: 6/7;
+            place-self: center;
+        }
+        &__areto{
+            grid-column: 1/5;
+            grid-row: 7/8;
+            place-self: center;
+        }
+    }
+}
